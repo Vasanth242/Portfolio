@@ -909,7 +909,7 @@
 
     <!-- Navigation -->
     <nav class="fixed top-0 w-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm z-50 shadow-sm transition-colors">
-        <div class="container mx-auto px-4 py-5 flex justify-between items-center">
+        <div class="container mx-auto px-4 md:px-6 py-5 flex justify-between items-center">
             <a href="#" class="text-3xl font-special text-primary animate-pulse">Vasanth</a>
             <ul class="hidden md:flex space-x-8">
                 <li><a href="#hero" class="nav-link">Home</a></li>
@@ -920,7 +920,7 @@
                 <li><a href="#certifications" class="nav-link">Certifications</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            <div class="flex items-center gap-4">
+            <div class="flex items-center gap-2 md:gap-4 ml-auto">
                 <div class="theme-toggle" id="theme-toggle"></div>
                 <button id="menu-btn" class="md:hidden text-foreground">
                     <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1276,18 +1276,38 @@
             <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-primary font-primary">Certifications</h2>
             <div class="max-w-3xl mx-auto">
                 <div class="card animate-scale-in">
-                    <ul class="space-y-4">
-                        <li class="flex items-center gap-3 text-lg">
+                    <ul class="space-y-6">
+                        <li class="flex items-center gap-4 text-lg group">
                             <span class="text-primary text-2xl animate-bounce">•</span>
-                            Python – Internshala
+                            <a href="certifications/robot-framework-level-2.pdf" 
+                            class="text-foreground hover:text-primary transition-colors underline decoration-transparent hover:decoration-current"
+                            download="Vasanth_Robot_Framework_Test_Automation_Level_2.pdf">
+                                Robot Framework Test Automation - Level 2
+                            </a>
                         </li>
-                        <li class="flex items-center gap-3 text-lg">
+                        <li class="flex items-center gap-4 text-lg group">
                             <span class="text-primary text-2xl animate-bounce" style="animation-delay: 0.1s;">•</span>
-                            Full Stack Web Developer Course
+                            <a href="certifications/python-internshala.pdf" 
+                            class="text-foreground hover:text-primary transition-colors underline decoration-transparent hover:decoration-current"
+                            download="Vasanth_Python_Certificate_Internshala.pdf">
+                                Python – Internshala
+                            </a>
                         </li>
-                        <li class="flex items-center gap-3 text-lg">
+                        <li class="flex items-center gap-4 text-lg group">
                             <span class="text-primary text-2xl animate-bounce" style="animation-delay: 0.2s;">•</span>
-                            AWS S3 Basics – Coursera
+                            <a href="certifications/full-stack-web-developer.pdf" 
+                            class="text-foreground hover:text-primary transition-colors underline decoration-transparent hover:decoration-current"
+                            download="Vasanth_Full_Stack_Web_Developer_Certificate.pdf">
+                                Full Stack Web Developer Course
+                            </a>
+                        </li>
+                        <li class="flex items-center gap-4 text-lg group">
+                            <span class="text-primary text-2xl animate-bounce" style="animation-delay: 0.3s;">•</span>
+                            <a href="certifications/aws-s3-coursera.pdf" 
+                            class="text-foreground hover:text-primary transition-colors underline decoration-transparent hover:decoration-current"
+                            download="Vasanth_AWS_S3_Basics_Coursera.pdf">
+                                AWS S3 Basics – Coursera
+                            </a>
                         </li>
                     </ul>
                 </div>
