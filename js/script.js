@@ -64,7 +64,13 @@ const projects = {
         desc: "This responsive portfolio website featuring dark mode, smooth animations, interactive modals, and PDF certificate viewer.",
         tech: ["HTML", "CSS", "JavaScript", "Tailwind CSS"],
         link: "https://vasanth242.github.io/Portfolio/",
-        status: "Live"
+        status: "Live",
+        screenshots: [
+            "assets/screenshots/portfolio-1.png",
+            "assets/screenshots/portfolio-2.png",
+            "assets/screenshots/portfolio-3.png",
+            "assets/screenshots/portfolio-4.png",  // Add as many as you have
+        ]
     }
 };
 
