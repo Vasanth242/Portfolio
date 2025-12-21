@@ -84,7 +84,6 @@ sections.forEach(section => sectionObserver.observe(section));
 function openPdfModal(pdfUrl, title) {
     document.getElementById('pdf-modal-title').textContent = title;
     document.getElementById('pdf-frame').src = pdfUrl;
-    document.getElementById('pdf-download-btn').href = pdfUrl;
     document.getElementById('pdf-modal').classList.add('visible');
 }
 
@@ -105,4 +104,12 @@ document.querySelectorAll('.view-pdf').forEach(button => {
 // Close on background click
 document.getElementById('pdf-modal').addEventListener('click', function(e) {
     if (e.target === this) closePdfModal();
+});
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+window.addEventListener('scroll', () => {
+    document.getElementById('back-to-top').classList.toggle('opacity-100', window.scrollY > 500);
+    document.getElementById('back-to-top').classList.toggle('pointer-events-auto', window.scrollY > 500);
 });
