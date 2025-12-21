@@ -289,7 +289,26 @@
         <div class="container mx-auto px-4">
             <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-primary font-primary">Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <div class="card cursor-pointer animate-scale-in" style="animation-delay: 0.1s;">
+
+                <!-- Career Tracker (Ongoing - Highlighted First) -->
+                <div class="card cursor-pointer animate-scale-in" style="animation-delay: 0.1s;" onclick="openProjectModal('career_tracker')">
+                    <div class="h-32 bg-gradient-primary rounded-lg mb-4 animate-gradient-shift"></div>
+                    <div class="flex items-center justify-between mb-2">
+                        <h3 class="text-xl font-bold text-primary">Career Tracker</h3>
+                        <span class="badge bg-green-600">In Progress</span>
+                    </div>
+                    <p class="text-muted mb-3">
+                        Personal job application tracking system with dashboard analytics, interview scheduling, referral management, and progress tracking.
+                    </p>
+                    <div class="flex gap-2 flex-wrap">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">Django</span>
+                        <span class="tech-badge">SQLite</span>
+                        <span class="tech-badge">Tailwind CSS</span>
+                        <span class="tech-badge">JavaScript</span>
+                    </div>
+                </div>
+                <!-- <div class="card cursor-pointer animate-scale-in" style="animation-delay: 0.1s;">
                     <div class="h-32 bg-gradient-primary rounded-lg mb-4 animate-gradient-shift"></div>
                     <h3 class="text-xl font-bold text-primary mb-2">HRMS</h3>
                     <p class="text-muted mb-3">Automated manual HR processes with role-based access control.</p>
@@ -298,7 +317,7 @@
                         <span class="tech-badge">SQLite</span>
                         <span class="tech-badge">Bootstrap</span>
                     </div>
-                </div>
+                </div> -->
                 <div class="card cursor-pointer animate-scale-in" style="animation-delay: 0.2s;">
                     <div class="h-32 bg-gradient-primary rounded-lg mb-4 animate-gradient-shift"></div>
                     <h3 class="text-xl font-bold text-primary mb-2">EQM</h3>
@@ -309,7 +328,7 @@
                         <span class="tech-badge">Chart.js</span>
                     </div>
                 </div>
-                <div class="card cursor-pointer animate-scale-in" style="animation-delay: 0.3s;" onclick="openModal('portfolio')">
+                <div class="card cursor-pointer animate-scale-in" style="animation-delay: 0.3s;" onclick="openProjectModal('portfolio')">
                     <div class="h-32 bg-gradient-primary rounded-lg mb-4 animate-gradient-shift"></div>
                     <h3 class="text-xl font-bold text-primary mb-2">Portfolio</h3>
                     <p class="text-muted mb-3">Responsive personal portfolio with dark mode and animations.</p>

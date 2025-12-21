@@ -20,44 +20,79 @@ menuBtn.addEventListener('click', () => mobileMenu.classList.remove('hidden'));
 closeMenu.addEventListener('click', () => mobileMenu.classList.add('hidden'));
 
 // Smooth Scroll
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-        e.preventDefault();
-        document.querySelector(a.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-        mobileMenu.classList.add('hidden');
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+
+        // Only prevent default and smooth scroll if it's an internal anchor link
+        if (href.startsWith('#') && href.length > 1) {  // #about, #projects, etc.
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+                mobileMenu.classList.add('hidden'); // Close mobile menu
+            }
+        }
+        // External links (GitHub, LinkedIn, etc.) will work normally
     });
 });
 
 // Project Modal
 const modal = document.getElementById('project-modal');
 const projects = {
-    hrms: {
-        title: "HRMS",
-        desc: "Automated HR workflows with role-based access, attendance tracking, and payroll management.",
-        tech: ["Django", "SQLite", "Bootstrap"],
-        link: "https://github.com/Vasanth242/hrms"
+    career_tracker: {
+        title: "Career Tracker",
+        desc: "A personal job application tracking system to manage applications, interviews, referrals, and progress. Features user authentication, dashboard analytics, and responsive design.",
+        tech: ["Python", "Django", "SQLite", "Tailwind CSS", "JavaScript"],
+        link: "https://github.com/Vasanth242/Career_Tracker",
+        status: "In Progress"
     },
     eqm: {
         title: "EQM",
-        desc: "Enterprise Quality Management system with real-time defect tracking and analytics.",
+        desc: "Enterprise Quality Management system with real-time defect tracking, reporting, and interactive analytics dashboard.",
         tech: ["Python", "Django", "Chart.js"],
-        link: "https://github.com/Vasanth242/eqm"
+        link: "https://github.com/Vasanth242/eqm",
+        status: "Completed"
     },
     portfolio: {
         title: "Personal Portfolio",
-        desc: "Responsive portfolio with dark mode, animations, and project modals.",
-        tech: ["HTML", "CSS", "JavaScript"],
-        link: "https://vasanth242.github.io/portfolio"
+        desc: "This responsive portfolio website featuring dark mode, smooth animations, interactive modals, and PDF certificate viewer.",
+        tech: ["HTML", "CSS", "JavaScript", "Tailwind CSS"],
+        link: "https://vasanth242.github.io/Portfolio/",
+        status: "Live"
     }
 };
 
-// This function opens the modal with project details (based on project ID) for now removed onclick from cards except portfolio card if needed can be added   
-function openModal(id) {
+function openProjectModal(id) {
     const p = projects[id];
-    document.getElementById('modal-title').textContent = p.title;
+    if (!p) {
+        console.error("Project not found:", id);
+        return;
+    }
+
+    // Set title with status badge
+    let titleHtml = p.title;
+    if (p.status) {
+        titleHtml += ` <span class="badge bg-green-600 ml-2">${p.status}</span>`;
+    }
+    document.getElementById('modal-title').innerHTML = titleHtml;
+
+    // Set description
     document.getElementById('modal-desc').textContent = p.desc;
-    document.getElementById('modal-tech').innerHTML = p.tech.map(t => `<span class="tech-badge">${t}</span>`).join('');
-    document.getElementById('modal-link').href = p.link;
+
+    // Set tech badges
+    document.getElementById('modal-tech').innerHTML = p.tech.map(t => 
+        `<span class="tech-badge">${t}</span>`
+    ).join('');
+
+    // Set link button - CORRECT WAY
+    const linkBtn = document.getElementById('modal-link');
+    linkBtn.setAttribute('href', p.link);
+    linkBtn.setAttribute('target', '_blank');
+    linkBtn.setAttribute('rel', 'noopener noreferrer');
+    linkBtn.textContent = p.link.includes('github.com') ? "View on GitHub →" : "View Live Project →";
+
+    // Show modal
     modal.classList.add('visible');
 }
 
@@ -65,8 +100,11 @@ function closeModal() {
     modal.classList.remove('visible');
 }
 
-modal.addEventListener('click', e => {
-    if (e.target === modal) closeModal();
+// Close when clicking outside
+modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        closeModal();
+    }
 });
 
 // Section Observer
