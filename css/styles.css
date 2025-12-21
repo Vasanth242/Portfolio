@@ -918,3 +918,14 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(-4px);
     box-shadow: 0 8px 25px rgba(255, 140, 66, 0.5);
 }
+
+[data-theme="dark"] #contact input,
+[data-theme="dark"] #contact textarea {
+    background: rgba(255, 255, 255, 0.15) !important;
+    color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] #contact input::placeholder,
+[data-theme="dark"] #contact textarea::placeholder {
+    color: #94a3b8 !important;
+}
