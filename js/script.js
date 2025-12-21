@@ -176,3 +176,38 @@ window.addEventListener('scroll', () => {
     document.getElementById('back-to-top').classList.toggle('opacity-100', window.scrollY > 500);
     document.getElementById('back-to-top').classList.toggle('pointer-events-auto', window.scrollY > 500);
 });
+
+// Contact Form AJAX Submission
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const form = e.target;
+    const formMessage = document.getElementById('form-message');
+    
+    // Show loading
+    formMessage.textContent = "Sending...";
+    formMessage.classList.remove('hidden', 'text-green-400');
+    formMessage.classList.add('text-white/80');
+    
+    fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: {
+            'Accept': 'application/json'
+        }
+    }).then(response => {
+        if (response.ok) {
+            formMessage.textContent = "Message sent successfully! 🎉";
+            formMessage.classList.add('text-green-400');
+            form.reset(); // Clear form
+        } else {
+            formMessage.textContent = "Oops! Something went wrong. Try again.";
+            formMessage.classList.add('text-red-400');
+        }
+    }).catch(error => {
+        formMessage.textContent = "Network error. Please try again.";
+        formMessage.classList.add('text-red-400');
+    }).finally(() => {
+        formMessage.classList.remove('hidden');
+    });
+});
