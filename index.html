@@ -506,21 +506,80 @@
 
     <!-- Contact -->
     <section id="contact" class="py-24 bg-gradient-primary section">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl md:text-5xl font-bold mb-12 font-special text-white animate-shimmer">Let's Connect</h2>
-            <div class="max-w-2xl mx-auto space-y-6 text-white text-lg">
-                <p>Email: <a href="mailto:vasanthsenthilnathan24@gmail.com" class="text-white hover:underline font-medium">vasanthsenthilnathan24@gmail.com</a></p>
-                <p>Phone: <span class="font-medium">+91 82205 93293</span></p>
-                <p>LinkedIn: <a href="https://linkedin.com/in/vasanth-senthilnathan" class="text-white hover:underline font-medium">linkedin.com/in/vasanth-senthilnathan</a></p>
-                <p>GitHub: <a href="https://github.com/Vasanth242" class="text-white hover:underline font-medium">github.com/Vasanth242</a></p>
-                <p class="text-white/80 text-sm">Open to opportunities in India & abroad</p>
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 font-special text-white animate-shimmer">
+                Let's Connect
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                <!-- Left: Contact Info -->
+                <div class="text-center md:text-left space-y-8 text-white">
+                    <div class="space-y-6 text-lg">
+                        <p>Email: 
+                            <a href="mailto:vasanthsenthilnathan24@gmail.com" class="text-white hover:underline font-medium">
+                                vasanthsenthilnathan24@gmail.com
+                            </a>
+                        </p>
+                        <p>Phone: <span class="font-medium">+91 82205 93293</span></p>
+                        <p>LinkedIn: 
+                            <a href="https://www.linkedin.com/in/vasanth-senthilnathan/" target="_blank" rel="noopener noreferrer" 
+                            class="text-white hover:underline font-medium">
+                                linkedin.com/in/vasanth-senthilnathan
+                            </a>
+                        </p>
+                        <p>GitHub: 
+                            <a href="https://github.com/Vasanth242" target="_blank" rel="noopener noreferrer" 
+                            class="text-white hover:underline font-medium">
+                                github.com/Vasanth242
+                            </a>
+                        </p>
+                        <p class="text-white/80 text-sm pt-4">Open to opportunities in India & abroad</p>
+                    </div>
+
+                    <a href="assets/resume/Vasanth_Resume.pdf" download 
+                    class="inline-block mt-8 btn-primary animate-pulse">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                        Download Resume
+                    </a>
+                </div>
+
+                <!-- Right: Contact Form -->
+                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-2xl">
+                    <h3 class="text-2xl font-bold text-white mb-6 text-center">Send Me a Message</h3>
+                    <form action="https://formspree.io/f/maqwjppe" method="POST" class="space-y-6">
+                        <input 
+                            type="text" 
+                            name="name" 
+                            placeholder="Your Name" 
+                            required 
+                            class="w-full p-4 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/60 focus:outline-none focus:border-white/60 transition"
+                        />
+                        <input 
+                            type="email" 
+                            name="email" 
+                            placeholder="Your Email" 
+                            required 
+                            class="w-full p-4 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/60 focus:outline-none focus:border-white/60 transition"
+                        />
+                        <textarea 
+                            name="message" 
+                            placeholder="Your Message" 
+                            rows="6" 
+                            required 
+                            class="w-full p-4 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/60 focus:outline-none focus:border-white/60 transition resize-none"
+                        ></textarea>
+                        <button type="submit" class="btn-primary w-full text-lg py-4">
+                            Send Message
+                        </button>
+                    </form>
+                    <p class="text-white/60 text-sm text-center mt-4">
+                        I'll get back to you as soon as possible!
+                    </p>
+                </div>
             </div>
-            <a href="assets/resume/Vasanth_Resume.pdf" download class="inline-block mt-12 btn-primary animate-pulse">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                </svg>
-                Download Resume
-            </a>
         </div>
     </section>
 
@@ -541,7 +600,13 @@
             <div class="close-modal" onclick="closeModal()">X</div>
             <h3 id="modal-title" class="text-2xl font-bold text-primary mb-3"></h3>
             <p id="modal-desc" class="text-muted mb-4"></p>
+            <!-- Screenshot Gallery -->
+            <div id="modal-screenshots" class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <!-- Images will be injected here by JavaScript -->
+            </div>
+            <!-- Tech Badges -->
             <div id="modal-tech" class="flex gap-2 flex-wrap mb-4"></div>
+            <!-- Action Button -->
             <a id="modal-link" href="#" target="_blank" class="btn-primary">View Live Project</a>
         </div>
     </div>

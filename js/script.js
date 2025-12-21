@@ -45,7 +45,12 @@ const projects = {
         desc: "A personal job application tracking system to manage applications, interviews, referrals, and progress. Features user authentication, dashboard analytics, and responsive design.",
         tech: ["Python", "Django", "SQLite", "Tailwind CSS", "JavaScript"],
         link: "https://github.com/Vasanth242/Career_Tracker",
-        status: "In Progress"
+        status: "In Progress",
+        screenshots: [
+            "assets/screenshots/career-tracker-1.png",
+            "assets/screenshots/career-tracker-2.png",
+            "assets/screenshots/career-tracker-3.png"  // Add as many as you have
+        ]
     },
     eqm: {
         title: "EQM",
@@ -84,6 +89,20 @@ function openProjectModal(id) {
     document.getElementById('modal-tech').innerHTML = p.tech.map(t => 
         `<span class="tech-badge">${t}</span>`
     ).join('');
+
+    // Screenshots
+    const screenshotsContainer = document.getElementById('modal-screenshots');
+    screenshotsContainer.innerHTML = ''; // Clear previous
+
+    if (p.screenshots && p.screenshots.length > 0) {
+        p.screenshots.forEach(src => {
+            const img = document.createElement('img');
+            img.src = src;
+            img.alt = `${p.title} screenshot`;
+            img.className = "rounded-xl shadow-xl w-full object-cover border-4 border-white/20 hover:scale-105 transition-transform duration-300";
+            screenshotsContainer.appendChild(img);
+        });
+    }
 
     // Set link button - CORRECT WAY
     const linkBtn = document.getElementById('modal-link');
