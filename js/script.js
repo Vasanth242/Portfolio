@@ -144,9 +144,41 @@ const sectionObserver = new IntersectionObserver((entries) => {
 sections.forEach(section => sectionObserver.observe(section));
 
 // PDF Modal Functions
+// function openPdfModal(pdfUrl, title) {
+//     document.getElementById('pdf-modal-title').textContent = title;
+//     document.getElementById('pdf-frame').src = pdfUrl;
+//     document.getElementById('pdf-modal').classList.add('visible');
+// }
+
+// PDF Modal Functions
 function openPdfModal(pdfUrl, title) {
     document.getElementById('pdf-modal-title').textContent = title;
-    document.getElementById('pdf-frame').src = pdfUrl;
+
+    const iframe = document.getElementById('pdf-frame');
+
+    // Clear previous content
+    iframe.src = '';
+
+    // Try direct PDF first (works on most desktops and many phones)
+    iframe.src = pdfUrl;
+
+    // If direct load fails on mobile (common), fall back to Google Viewer after a short delay
+    iframe.onload = function() {
+        // If PDF loaded successfully, do nothing
+    };
+
+    iframe.onerror = function() {
+        // Fallback to Google Docs Viewer if direct PDF fails
+        iframe.src = `https://docs.google.com/viewer?url=${encodeURIComponent(pdfUrl)}&embedded=true`;
+    };
+
+    // Final fallback: if still not working, use Google Viewer immediately
+    setTimeout(() => {
+        if (iframe.src === pdfUrl || iframe.src === '') {
+            iframe.src = `https://docs.google.com/viewer?url=${encodeURIComponent(pdfUrl)}&embedded=true`;
+        }
+    }, 2000);
+
     document.getElementById('pdf-modal').classList.add('visible');
 }
 
