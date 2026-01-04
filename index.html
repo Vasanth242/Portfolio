@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Vasanth Senthilnathan - Full Stack Developer | Python, Django, JavaScript | Building efficient, scalable solutions.">
+    <meta name="description" content="Vasanth Senthilnathan - Software Engineer | Full Stack  & Backend Developer | Python, Django, JavaScript | Building efficient, scalable solutions.">
     <meta name="keywords" content="full stack developer, python, django, javascript, portfolio, chennai, nelito, hrms, eqm">
     <meta name="author" content="Vasanth Senthilnathan">
     <meta property="og:title" content="Vasanth Senthilnathan | Full Stack Developer">
@@ -90,12 +90,12 @@
         <div class="hero-image-container">
           <div class="hero-image-wrapper">
             <div class="hero-image-bg"></div>
-            <img src="assets/img/profile.jpg" alt="Professional Profile Picture - Vasanth, Full Stack Developer" class="hero-profile-image">
+            <img src="assets/img/profile.jpg" alt="Professional Profile Picture - Vasanth, Software Engineer | Full Stack  & Backend Developer" class="hero-profile-image">
           </div>
         </div>
         <div class="hero-content">
-          <h1 class="hero-headline">Full Stack Developer</h1>
-          <p class="hero-tech-stack">Python | Django | JavaScript</p>
+          <h1 class="hero-headline">Software Engineer </h1>
+          <p class="hero-tech-stack">Python | Django | JavaScript | Robot-Framework</p>
           <p class="hero-subtext">
             Computer Science &amp; Engineering graduate passionate about designing,
             developing, and implementing applications using cutting-edge technologies.
@@ -603,18 +603,35 @@
 
     <!-- Project Modal -->
     <div id="project-modal" class="modal">
-        <div class="modal-content">
-            <div class="close-modal" onclick="closeModal()">X</div>
-            <h3 id="modal-title" class="text-2xl font-bold text-primary mb-3"></h3>
-            <p id="modal-desc" class="text-muted mb-4"></p>
-            <!-- Screenshot Gallery -->
-            <div id="modal-screenshots" class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                <!-- Images will be injected here by JavaScript -->
+        <div class="modal-content max-w-4xl w-full bg-card rounded-2xl shadow-2xl relative">
+            <!-- Large Fixed Close Button - Always visible on mobile -->
+            <button class="close-modal fixed top-4 right-4 z-50 bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center text-4xl font-light shadow-2xl hover:bg-primary/90 hover:scale-110 transition-all duration-200" 
+                    onclick="closeModal()">
+                ×
+            </button>
+
+            <!-- Scrollable Content with top padding to avoid overlap -->
+            <div class="pt-24 pb-12 px-6 md:px-12 overflow-y-auto max-h-[90vh]">
+                <h3 id="modal-title" class="text-3xl md:text-4xl font-bold text-primary mb-6 text-center"></h3>
+                
+                <p id="modal-desc" class="text-foreground text-lg mb-10 text-center max-w-3xl mx-auto leading-relaxed"></p>
+                
+                <!-- Screenshot Gallery -->
+                <div id="modal-screenshots" class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                    <!-- Images injected by JS -->
+                </div>
+                
+                <!-- Tech Badges -->
+                <div id="modal-tech" class="flex gap-4 flex-wrap justify-center mb-12"></div>
+                
+                <!-- Action Button -->
+                <div class="text-center">
+                    <a id="modal-link" href="#" target="_blank" rel="noopener noreferrer" 
+                    class="btn-primary text-lg px-10 py-4 inline-flex items-center gap-3">
+                        View on GitHub →
+                    </a>
+                </div>
             </div>
-            <!-- Tech Badges -->
-            <div id="modal-tech" class="flex gap-2 flex-wrap mb-4"></div>
-            <!-- Action Button -->
-            <a id="modal-link" href="#" target="_blank" class="btn-primary">View Live Project</a>
         </div>
     </div>
 
