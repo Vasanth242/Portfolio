@@ -1034,3 +1034,21 @@ h1, h2, h3, h4, h5, h6 {
         height: 380px;
     }
 }
+
+/* Navigation - Space between name and menu items */
+nav ul {
+    margin-left: 3rem; /* Adjust as needed - 3rem = good spacing */
+}
+
+/* Mobile - reduce space if needed */
+@media (max-width: 768px) {
+    nav ul {
+        margin-left: 2rem;
+    }
+}
+
+/* Extra safety - ensure name doesn't overlap */
+nav .container > a {
+    flex-shrink: 0;
+}
+
