@@ -752,7 +752,29 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Mobile Menu */
 #mobile-menu {
+    background-color: var(--landing-background); /* Uses white in light, dark in dark */
     transition: transform 0.3s ease;
+}
+
+#mobile-menu .nav-link {
+    color: var(--landing-foreground); /* Dark in light mode, light in dark mode */
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+
+#mobile-menu .nav-link:hover {
+    color: var(--landing-primary);
+}
+
+/* Close button in mobile menu */
+#mobile-menu #close-menu {
+    color: var(--landing-foreground);
+    opacity: 0.8;
+}
+
+#mobile-menu #close-menu:hover {
+    color: var(--landing-primary);
+    opacity: 1;
 }
 
 /* Skill Bar */
@@ -913,7 +935,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    background: rgba(255, 140, 66, 0.1);
+    background: rgba(255, 140, 66, 0.15);
     color: var(--landing-primary);
     padding: 0.5rem 1rem;
     border-radius: 9999px;
@@ -930,10 +952,22 @@ h1, h2, h3, h4, h5, h6 {
 .skill-item .proficiency {
     font-size: 0.7rem;
     font-weight: 600;
-    background: rgba(0,0,0,0.1);
-    padding: 0.1rem 0.4rem;
-    border-radius: 4px;
+    color: #4a5568; /* Dark gray - readable on light badge background */
+    background: rgba(0,0,0,0.08);
+    padding: 0.15rem 0.5rem;
+    border-radius: 6px;
     margin-left: 0.5rem;
+}
+
+/* In Dark Mode - Keep light text */
+[data-theme="dark"] .skill-item .proficiency {
+    color: #e2e8f0; /* Light foreground */
+    background: rgba(255, 255, 255, 0.15);
+}
+
+
+[data-theme="dark"] .skill-item {
+    background: rgba(255, 140, 66, 0.1);
 }
 
 /* PDF Modal Specific Styles */
@@ -1050,28 +1084,4 @@ nav ul {
 /* Extra safety - ensure name doesn't overlap */
 nav .container > a {
     flex-shrink: 0;
-}
-
-/* Skills Proficiency Badges - Better Visibility in Light Mode */
-.skill-item .proficiency {
-    color: #4a5568; /* Dark gray - readable on light badge background */
-    font-weight: 600;
-    background: rgba(0, 0, 0, 0.08); /* Slightly darker background */
-    padding: 0.15rem 0.5rem;
-    border-radius: 6px;
-}
-
-/* In Dark Mode - Keep light text */
-[data-theme="dark"] .skill-item .proficiency {
-    color: #e2e8f0; /* Light foreground */
-    background: rgba(255, 255, 255, 0.15);
-}
-
-/* Optional: Make badge container slightly darker in light mode for better contrast */
-.skill-item {
-    background: rgba(255, 140, 66, 0.15); /* Slightly more opaque in light mode */
-}
-
-[data-theme="dark"] .skill-item {
-    background: rgba(255, 140, 66, 0.1);
 }
