@@ -1052,3 +1052,26 @@ nav .container > a {
     flex-shrink: 0;
 }
 
+/* Skills Proficiency Badges - Better Visibility in Light Mode */
+.skill-item .proficiency {
+    color: #4a5568; /* Dark gray - readable on light badge background */
+    font-weight: 600;
+    background: rgba(0, 0, 0, 0.08); /* Slightly darker background */
+    padding: 0.15rem 0.5rem;
+    border-radius: 6px;
+}
+
+/* In Dark Mode - Keep light text */
+[data-theme="dark"] .skill-item .proficiency {
+    color: #e2e8f0; /* Light foreground */
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Optional: Make badge container slightly darker in light mode for better contrast */
+.skill-item {
+    background: rgba(255, 140, 66, 0.15); /* Slightly more opaque in light mode */
+}
+
+[data-theme="dark"] .skill-item {
+    background: rgba(255, 140, 66, 0.1);
+}
