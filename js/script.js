@@ -211,3 +211,6 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
         formMessage.classList.remove('hidden');
     });
 });
+
+// Set current year in footer dynamically
+document.getElementById('current-year').textContent = new Date().getFullYear();
