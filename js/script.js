@@ -92,7 +92,7 @@ function openProjectModal(id) {
     document.getElementById('modal-desc').textContent = p.desc;
 
     // Set tech badges
-    document.getElementById('modal-tech').innerHTML = p.tech.map(t => 
+    document.getElementById('modal-tech').innerHTML = p.tech.map(t =>
         `<span class="tech-badge">${t}</span>`
     ).join('');
 
@@ -133,11 +133,13 @@ modal.addEventListener('click', (e) => {
 });
 
 // Section Observer
-const sections = document.querySelectorAll('.section');
+const sections = document.querySelectorAll('.section, .experience-card, .skill-group, .card');
 const sectionObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
+        } else {
+            entry.target.classList.remove('visible');
         }
     });
 }, { threshold: 0.1 });
@@ -157,7 +159,7 @@ function closePdfModal() {
 
 // Attach click events to all "View" buttons
 document.querySelectorAll('.view-pdf').forEach(button => {
-    button.addEventListener('click', function() {
+    button.addEventListener('click', function () {
         const pdf = this.getAttribute('data-pdf');
         const title = this.getAttribute('data-title');
         openPdfModal(pdf, title);
@@ -165,7 +167,7 @@ document.querySelectorAll('.view-pdf').forEach(button => {
 });
 
 // Close on background click
-document.getElementById('pdf-modal').addEventListener('click', function(e) {
+document.getElementById('pdf-modal').addEventListener('click', function (e) {
     if (e.target === this) closePdfModal();
 });
 
@@ -178,17 +180,17 @@ window.addEventListener('scroll', () => {
 });
 
 // Contact Form AJAX Submission
-document.getElementById('contact-form').addEventListener('submit', function(e) {
+document.getElementById('contact-form').addEventListener('submit', function (e) {
     e.preventDefault();
-    
+
     const form = e.target;
     const formMessage = document.getElementById('form-message');
-    
+
     // Show loading
     formMessage.textContent = "Sending...";
     formMessage.classList.remove('hidden', 'text-green-400');
     formMessage.classList.add('text-white/80');
-    
+
     fetch(form.action, {
         method: 'POST',
         body: new FormData(form),
