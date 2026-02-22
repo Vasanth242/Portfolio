@@ -53,7 +53,7 @@ The portfolio highlights my experience in:
 - Backend development using Python (Django)  
 - CI/CD exposure and enterprise application support  
 
-🔗 Live Website: https://vasanth242.github.io/
+🔗 Live Website: https://vasanth242.github.io/Portfolio/
 
 ---
 
