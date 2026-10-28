@@ -1,131 +1,47 @@
-# 🌐 Personal Portfolio Website  
-### Software Engineer | Banking & Payments | SDET | Backend Developer
+# Personal Portfolio
 
-This is my personal portfolio website designed to showcase my professional journey across Backend Development, QA Automation, and Banking & Payments Systems.
+Portfolio for Vasanth Senthilnathan, highlighting experience across software
+engineering, banking and payments, QA automation, and backend development.
 
-The portfolio highlights my experience in:
+## Features
 
-- ISO 20022 (MT ↔ MX) message translation testing  
-- SWIFT MT/MX messaging validation  
-- Robot Framework automation  
-- Backend development using Python (Django)  
-- CI/CD exposure and enterprise application support  
+- Responsive dark-first layout with a persistent light/dark theme toggle
+- Interactive Three.js visualization of ISO 20022 message flows
+- Professional experience timeline, selected projects, skills, and certificates
+- Project details and certificate preview dialogs
+- Resume and certificate downloads
+- Contact form powered by Formspree
+- Reduced-motion support and keyboard-accessible navigation
 
-🔗 Live Website: https://vasanth242.github.io/Portfolio/
+## Technology
 
----
+- Semantic HTML5, CSS, and vanilla JavaScript
+- Three.js 0.159 via CDN
+- GitHub Pages deployment
 
-## 🚀 Features
+## Project structure
 
-- Responsive modern UI built with Tailwind CSS  
-- Dark mode support  
-- Smooth animations and transitions  
-- Structured professional timeline section  
-- Dedicated Banking & Payments skills section  
-- Project modal system with dynamic rendering  
-- Resume download integration  
-- Contact form integration (Formspree)  
-- SEO-optimized meta tags  
+```text
+index.html
+css/
+  styles.css
+js/
+  script.js
+assets/
+  certifications/
+  img/
+  resume/
+  screenshots/
+favicon/
+```
 
----
+Open `index.html` in a browser or serve the project directory with a local HTTP
+server. Three.js is loaded from a CDN; when it is unavailable or WebGL is not
+supported, the hero displays a static illustration instead. Certificate
+preview links open the PDF directly in a new browser tab.
 
-## 🏗️ Tech Stack
+## Contact
 
-- HTML5  
-- Tailwind CSS  
-- JavaScript  
-- GitHub Pages (Deployment)  
-
----
-
-## 📂 Project Structure
-
-# 🌐 Personal Portfolio Website  
-### Software Engineer | Banking & Payments | SDET | Backend Developer
-
-This is my personal portfolio website designed to showcase my professional journey across Backend Development, QA Automation, and Banking & Payments Systems.
-
-The portfolio highlights my experience in:
-
-- ISO 20022 (MT ↔ MX) message translation testing  
-- SWIFT MT/MX messaging validation  
-- Robot Framework automation  
-- Backend development using Python (Django)  
-- CI/CD exposure and enterprise application support  
-
-🔗 Live Website: https://vasanth242.github.io/Portfolio/
-
----
-
-## 🚀 Features
-
-- Responsive modern UI built with Tailwind CSS  
-- Dark mode support  
-- Smooth animations and transitions  
-- Structured professional timeline section  
-- Dedicated Banking & Payments skills section  
-- Project modal system with dynamic rendering  
-- Resume download integration  
-- Contact form integration (Formspree)  
-- SEO-optimized meta tags  
-
----
-
-## 🏗️ Tech Stack
-
-- HTML5  
-- Tailwind CSS  
-- JavaScript  
-- GitHub Pages (Deployment)  
-
----
-
-## 📂 Project Structure
-
-Portfolio/
-│
-├── index.html
-├── css/
-│ └── styles.css
-├── js/
-│ └── script.js
-├── assets/
-│ ├── img/
-│ ├── resume/
-│ └── certifications/
-└── favicon/
----
-
-## 💼 Professional Focus
-
-This portfolio reflects my hybrid profile combining:
-
-- Backend Development  
-- Automation Testing (Robot Framework + Python)  
-- Banking Domain Exposure  
-- ISO 20022 & SWIFT Messaging Validation  
-- Enterprise System Testing  
-
-The project is continuously updated as I expand my expertise in API Testing, CI/CD pipelines, and banking payment systems.
-
----
-
-## 📈 Future Improvements
-
-- Add detailed project case studies  
-- Add API testing project section  
-- Improve accessibility & performance optimization  
-- Integrate blog/technical insights section  
-- Add analytics dashboard  
-
----
-
-## 📬 Contact
-
-📧 Email: vasanthsenthilnathan24@gmail.com  
-🔗 LinkedIn: https://www.linkedin.com/in/vasanth-senthilnathan/  
-💻 GitHub: https://github.com/Vasanth242  
-
----
-
-© 2026 Vasanth Senthilnathan. All rights reserved.
+- Email: vasanthsenthilnathan24@gmail.com
+- LinkedIn: https://www.linkedin.com/in/vasanth-senthilnathan/
+- GitHub: https://github.com/Vasanth242
